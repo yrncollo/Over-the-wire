@@ -10,6 +10,5 @@ url = f"http://{username}.natas.labs.overthewire.org"
 data = requests.post(url, auth=(username, password))
 soup = BeautifulSoup(data.content, "html.parser")
 
-print(soup)
 result = re.findall(r'[A-Za-z0-9]{32}', data.text)[0]
 print(result)
